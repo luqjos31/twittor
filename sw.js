@@ -7,7 +7,7 @@ const DYNAMIC_CACHE = 'dynamic-v1'
 const INMUTABLE_CACHE = 'inmutable-v1'
 
 const APP_SHELL = [
-    '/',
+    // '/',
     'index.html',
     'css/style.css', 
     'img/favicon.ico',
@@ -26,7 +26,7 @@ const APP_SHELL_INMUTABLE = [
 'https://fonts.googleapis.com/css?family=Lato:400,300',
  'css/animate.css',
  'js/libs/jquery.js',
- // 'css/all.css'
+ 'css/all.css'
 ]
 
 
