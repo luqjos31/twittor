@@ -2,8 +2,8 @@
 
 importScripts('js/libs/sw-utils.js')
 
-const STATIC_CACHE = 'static-v3'
-const DYNAMIC_CACHE = 'dynamic-v1'
+const STATIC_CACHE = 'static-v4'
+const DYNAMIC_CACHE = 'dynamic-v2'
 const INMUTABLE_CACHE = 'inmutable-v1'
 
 const APP_SHELL = [
@@ -59,6 +59,10 @@ const respuesta = caches.keys().then( keys => {
       return caches.delete(key)      
     }
      
+    if (!key.includes(DYNAMIC_CACHE) && key.includes('dynamic'))
+    {
+      return caches.delete(key)      
+    }
     })
  })
 
@@ -94,11 +98,8 @@ self.addEventListener('fetch', e => {
     })
       
     }
-
-    
+  
   })
-
-
 
   e.respondWith(respuesta)
 
